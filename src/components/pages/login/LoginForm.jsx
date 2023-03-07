@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+
+
 
 const LoginForm = () => {
     //State
     const [name, setName] = useState("");
+    const navigate = useNavigate();
 
     //Comportement
     function handleChange (event) {
@@ -17,7 +21,8 @@ const LoginForm = () => {
     //Render
     return (  
         <div>
-            <form action="submit" onSubmit={handleSubmit}>
+            {/* <form action="submit" onSubmit={handleSubmit}> */}
+            <form action="submit" onSubmit={()=>{navigate("/order")}}>
             <h1>Bienvenue chez nous !</h1>
             <br />
             <h2>Connectez-vous :</h2>
