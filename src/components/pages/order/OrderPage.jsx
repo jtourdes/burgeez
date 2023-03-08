@@ -12,7 +12,7 @@ const OrderPage = (props) => {
         return (  
             <div>
                 <h1>Bonjour {props.name}</h1>
-                <button onClick={()=>{navigate("/login")}} >Déconnexion</button>
+                <button onClick={()=>{navigate("/")}} >Déconnexion</button>
             </div>
         );
     }
