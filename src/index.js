@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/order",
-    element: <OrderPage />,
+    element: <OrderPage name={""}/>,
     errorElement: <ErrorPage />
   },
 ]);

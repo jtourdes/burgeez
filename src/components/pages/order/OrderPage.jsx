@@ -1,11 +1,20 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-const OrderPage = () => {
-    return (  
-        <div>
-            Hello
-        </div>
-    );
-}
+const OrderPage = (props) => {
+
+    //State
+    const navigate = useNavigate();
+
+    //Comportement
+
+    //Render
+        return (  
+            <div>
+                <h1>Bonjour {props.name}</h1>
+                <button onClick={()=>{navigate("/login")}} >Déconnexion</button>
+            </div>
+        );
+    }
 
 export default OrderPage;
