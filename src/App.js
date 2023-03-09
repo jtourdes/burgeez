@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes> // define acessible routes inside the component
       <Route path="/" element={<LoginPage />}/> //precise for each route a specific URL and a component
-      <Route path="/order" element={<OrderPage />}/>
+      <Route path="/order/:username" element={<OrderPage />}/> //precise that there is an URL variable to avoid routings erros
       <Route path="*" element={<ErrorPage />}/>
     </Routes>
       
