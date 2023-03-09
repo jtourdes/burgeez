@@ -5,29 +5,29 @@ import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
     //State
-    const [name, setName] = useState("");
+    const [username, setUserName] = useState("");
     const navigate = useNavigate();
 
     //Comportement
     function handleChange (event) {
-        setName(event.target.value)
+        setUserName(event.target.value)
     }
 
     function handleSubmit (event){
         event.preventDefault()
-        alert(`Bonjour ${name}`)
+        navigate(`/order/${username}`)
     }
 
     //Render
     return (  
         <div>
-            {/* <form action="submit" onSubmit={handleSubmit}> */}
-            <form action="submit" onSubmit={()=>{navigate("/order")}}>
+            <form action="submit" onSubmit={handleSubmit}>
+            {/* <form action="submit" onSubmit={()=>{navigate("/order")}}> */}
             <h1>Bienvenue chez nous !</h1>
             <br />
             <h2>Connectez-vous :</h2>
                 <input 
-                    value={name} 
+                    value={username} 
                     type="text" 
                     placeholder="Entrez votre prénom ..." 
                     required={true} 
