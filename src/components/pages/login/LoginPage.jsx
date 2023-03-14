@@ -5,24 +5,25 @@ import Logo from "../Logo"
 
 const LoginPage = () => {
     return (  
-        <LoginSection>
+        <LoginPageStyled>
             <Logo />
             <LoginForm />
-        </LoginSection>
+        </LoginPageStyled>
     );
 }
 
 
-const LoginSection = styled.section`
-    background-image: linear-gradient(rgba(0, 0, 0, 0.800),rgba(0, 0, 0, 0.5)),url("/images/F03 burger-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+const LoginPageStyled = styled.div`
     height: 100vh;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    background-image: url("/images/F03 burger-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
 `
 
 export default LoginPage;

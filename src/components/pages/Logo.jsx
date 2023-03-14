@@ -5,6 +5,7 @@ const LogoContainer = styled.div `
     align-items: center;
     justify-content:center;
     min-width: 2rem;
+    transform: scale();
 
     p {
     font-size: 8rem;    
@@ -16,7 +17,10 @@ const LogoContainer = styled.div `
     }
 
     img {
-      height:7rem;
+      height:10rem;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 1rem;
     }
 `
 
