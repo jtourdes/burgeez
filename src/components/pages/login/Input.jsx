@@ -34,7 +34,11 @@ input {
   font-size:${theme.fonts.P0};
   font-weight: ${theme.fonts.weights.regular};
   color: ${theme.colors.greyDark}; 
-  border: none;  
+  border: none;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .profile-icon {
