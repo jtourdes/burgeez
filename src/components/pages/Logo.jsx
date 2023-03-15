@@ -1,5 +1,17 @@
 import styled from "styled-components"
+import { theme } from "../../theme"
 
+const Logo = ()=> {
+  return (
+    <LogoContainer>
+        <p>Holyyyy</p>
+        <img src="/images/F03 logo-orange.png" alt="" />
+        <p>Burgeez</p>
+    </LogoContainer>
+  )
+}
+
+// Styles
 const LogoContainer = styled.div `
     display: flex;
     align-items: center;
@@ -8,31 +20,19 @@ const LogoContainer = styled.div `
     transform: scale();
 
     p {
-    font-size: 8rem;    
+    font-size: ${theme.fonts.P6};    
     font-family: 'Amatic SC', cursive;
-    font-weight: 700;
-    color: orange;
+    font-weight: ${theme.fonts.weights.bold};
+    color: ${theme.colors.primary};
     z-index: 2;
     margin: 0;
     }
 
     img {
-      height:10rem;
+      height:6rem;
       object-fit: contain;
       object-position: center;
-      margin: 0 1rem;
+      margin: 0 ${theme.spacing.sm};
     }
 `
-
-
-const Logo = ()=> {
-  return (
-    <LogoContainer>
-        <p>Holyyy</p>
-        <img src="/images/F03 logo-orange.png" alt="" />
-        <p>Burgeez</p>
-    </LogoContainer>
-  )
-}
-
 export default Logo
