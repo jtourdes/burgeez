@@ -3,7 +3,7 @@ import Logo from '../Logo'
 import Profile from './Profile'
 
 
-export default function Navbar() {
+const Navbar = () => {
     // State
 
     // Behavior
@@ -11,8 +11,12 @@ export default function Navbar() {
     // Render
   return (
     <NavbarStyled>
-        <Logo />
-        <Profile/>
+        <Logo 
+            size="small"
+        />
+        <Profile
+            username="Jean"
+        />
     </NavbarStyled>
   )
 }
@@ -20,5 +24,13 @@ export default function Navbar() {
 // Styles
 
 const NavbarStyled = styled.div`
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100vw;
+    height: 6.25rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `
+
+export default Navbar;
