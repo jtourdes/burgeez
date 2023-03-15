@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../../theme';
 
 export default function Input({ value, onChange, Icon, ...otherProps }) {
   // State
@@ -21,25 +22,27 @@ export default function Input({ value, onChange, Icon, ...otherProps }) {
 
 // Styles
 const InputStyled = styled.div`
-
 height: 4rem;
-min-width: 20rem;
-max-width: 30rem;
-border-radius: 7px;
-border-style: none;
-color:white;   
-background-color: white;
+min-width: 18rem;
+border-radius: ${theme.borderRadius.round};
+border-style: none;  
+background-color: ${theme.colors.white};
 display: flex;
 align-items: center;
 
 input {
-  font-size:1rem;
-  font-weight: bold;
-  border: none;     
+  font-size:${theme.fonts.P0};
+  font-weight: ${theme.fonts.weights.regular};
+  color: ${theme.colors.greyDark}; 
+  border: none;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .profile-icon {
-    color: grey;
-    margin: 1rem
+    color: ${theme.colors.greyDark};
+    margin: ${theme.spacing.xs}
 }
 `

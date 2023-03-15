@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { theme } from '../../../theme';
 
 
 export default function PrimaryButton({label, Icon, ...otherProps}) {
@@ -17,18 +18,17 @@ const ButtonStyled = styled.button `
     align-items: center;
     justify-content: center;
     height: 4rem;
-    min-width: 20rem;
-    max-width: 30rem;
-    background-color: orange;
-    border-radius: 7px;
-    border-style: none;
-    color: white;
+    min-width: 18rem;
+    padding: 0 ${theme.spacing.sm};
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.background_white};
+    font-size: ${theme.fonts.P0};
     font-weight: bold;
-    font-size: 1rem;
-    padding: 0rem 0.5rem;
+    border-radius: ${theme.borderRadius.round};
+    border-style: none;
 
 .arrow-icon {
-    margin: 0.5rem
+    margin: ${theme.spacing.xs};
 }
 
 `

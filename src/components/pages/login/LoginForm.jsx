@@ -5,8 +5,7 @@ import {BsFillArrowRightCircleFill} from "react-icons/bs"
 import { BsPersonCircle } from "react-icons/bs";
 import Input from './Input';
 import PrimaryButton from './PrimaryButton';
-// import theme from "../../../theme/index.js"
-
+import {theme} from "../../../theme"
 
 const LoginForm = () => {
     //State
@@ -25,7 +24,7 @@ const LoginForm = () => {
 
     //Render
     return (
-        <Form action="submit" onSubmit={handleSubmit}>
+        <LoginFormStyled action="submit" onSubmit={handleSubmit}>
             <h1>
                 Bienvenue chez nous !
             </h1>
@@ -44,41 +43,40 @@ const LoginForm = () => {
                     Icon={ <BsFillArrowRightCircleFill className="arrow-icon"/>}
                 />
             </div>
-        </Form>
+        </LoginFormStyled>
     );
 }
 
 
 //Styles
-const Form = styled.form`
+const LoginFormStyled = styled.form`
     h1 {
-        color:white;    
-        font-size:4rem;
+        color:${theme.colors.white};    
+        font-size: ${theme.fonts.P5};
         font-family: 'Amatic SC', cursive;
-        font-weight: 700;
+        font-weight: ${theme.fonts.weights.bold};
     }
 
     h2 {
-        color:white;    
-        font-size:3rem;
+        color:${theme.colors.white};    
+        font-size:${theme.fonts.P4};
         font-family: 'Amatic SC', cursive;
-        font-weight: 700;
+        font-weight: ${theme.fonts.weights.bold};
     }
 
     .input-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: ${theme.spacing.sm};
     }
     
     .breakline {
         height: 4px;
         width: 21rem;
-        background-color: orange;
+        background-color: ${theme.colors.primary};
         margin: auto;
     }
 `
- 
 
 export default LoginForm;
