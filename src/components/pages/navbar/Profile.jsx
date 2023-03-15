@@ -1,21 +1,22 @@
 import styled from "styled-components"
-import {MdAccountCircle} from "react-icons/md"
 import {theme} from "../../../theme/index.js"
+import {useNavigate } from "react-router-dom"
 
 
-export default function Profile({username}) {
+export default function Profile({username, Icon, linkLabel, linkAction}) {
     // State
 
     // Behavior
+
 
     //Render
     return (
     <ProfileContainerStyled>
       <ProfileInfo>
-        <p className="user">Hey, <span className="username">{username}</span></p>
-        <p className="link">Se déconnecter</p>
+        <p className="welcome-user">Hey, <span className="username-highlight">{username}</span></p>
+        <p onClick={linkAction} className="link">{linkLabel}</p>
       </ProfileInfo>
-      <MdAccountCircle className="icon"/>
+      {Icon && Icon}
     </ProfileContainerStyled>
   )
 }
@@ -28,39 +29,33 @@ const ProfileContainerStyled = styled.div`
   gap: 1.5rem;
   padding: 0 2rem;
   color: ${theme.colors.greyDark};
+  font-family:'Open Sans', sans-serif;
 
-  p {
-    margin: 0;
-  }
-
-  .user {
-    font-family:'Open Sans', sans-serif; ;
-    font-size: ${theme.fonts.P1};
-    font-weight: ${theme.fonts.weights.medium};
-    margin-bottom: 0.5rem;
-
-  }
-
-  .username {
-    color: orange;
-    font-weight: ${theme.fonts.weights.bold};;
-  }
-
-  .link {
-    font-family:'Open Sans', sans-serif; ;
-    font-size: ${theme.fonts.XS};
-    font-weight: ${theme.fonts.weights.light};
-  }
   .icon {
    transform: scale(2.5);
-   /* background-color: green; */
    margin: 0;
-
   }
 `
   
 const ProfileInfo = styled.div`
-  /* background-color: red; */
- 
+  p {
+    margin: 0;
+  }
 
+  .welcome-user{
+    font-size: ${theme.fonts.P1};
+    font-weight: ${theme.fonts.weights.medium};
+    margin-bottom: 0.5rem;
+
+    .username-highlight {
+      color: ${theme.colors.primary};
+      font-weight: ${theme.fonts.weights.bold};;
+    }
+  }
+
+  .link {
+
+    font-size: ${theme.fonts.XS};
+    font-weight: ${theme.fonts.weights.light};
+  }
 `

@@ -1,21 +1,37 @@
+import { MdAccountCircle } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Logo from '../Logo'
 import Profile from './Profile'
 
 
+
 const Navbar = () => {
     // State
+    const navigate = useNavigate();
 
     // Behavior
+    function refreshPage () {
+        window.location.reload()
+    }
+
+    function disconnectUser () {
+        navigate("/")
+      } 
+
 
     // Render
   return (
     <NavbarStyled>
         <Logo 
             size="small"
+            onClick={refreshPage}
         />
         <Profile
             username="Jean"
+            Icon={<MdAccountCircle className="icon"/>}
+            linkLabel={"Se déconnecter"}
+            linkAction={disconnectUser}
         />
     </NavbarStyled>
   )

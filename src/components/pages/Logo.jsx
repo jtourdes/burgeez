@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-const Logo = ({size})=> {
+const Logo = ({size, onClick})=> {
   return (
-    <Test className={size}>
+    <Test className={size} onClick={onClick}>
       <LogoContainer >
         <p>Holyyyy</p>
         <img src="/images/F03 logo-orange.png" alt="" />
@@ -16,7 +16,7 @@ const Logo = ({size})=> {
 
 // Styles
 const Test = styled.div`
-  transform: scale(0.6);
+  transform: scale(0.7);
 `
 const LogoContainer = styled.div `
     display: flex;
