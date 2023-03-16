@@ -40,6 +40,7 @@ const ProfileContainerStyled = styled.div`
 const ProfileInfo = styled.div`
   p {
     margin: 0;
+    text-align: right;
   }
 
   .welcome-user{

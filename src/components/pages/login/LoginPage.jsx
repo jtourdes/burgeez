@@ -6,7 +6,7 @@ import Logo from "../Logo"
 const LoginPage = () => {
     return (  
         <LoginPageStyled>
-            <Logo />
+            <Logo className={"small-logo"}/>
             <LoginForm />
         </LoginPageStyled>
     );
@@ -23,6 +23,10 @@ const LoginPageStyled = styled.div`
     background-position: center;
     background-attachment: fixed;
     z-index: -1;
+
+    .small-logo {
+        transform: scale(1.5);
+    }
 `
 
 export default LoginPage;

@@ -18,5 +18,6 @@ function NavbarLefSide({refreshPage}) {
 const NavbarLeftSideStyled = styled.div`
     grid-area: 1 / 1 / 2 / 2;
     justify-self: start;
+    margin-left: 2rem;
 `
 export default NavbarLefSide

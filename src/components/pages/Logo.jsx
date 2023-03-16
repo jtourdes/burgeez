@@ -1,22 +1,22 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-const Logo = ({size, onClick})=> {
+const Logo = ({className, onClick})=> {
   return (
-    <Test className={size} onClick={onClick}>
-      <LogoContainer >
-        {/* <p>Holyyyy</p> */}
+    <LogoContainer
+    className={className}
+    onClick={onClick}>
+        <p>Holyyyy</p>
         <img src="/images/F03 logo-orange.png" alt="" />
-        {/* <p>Burgeez</p> */}
+        <p>Burgeez</p>
     </LogoContainer>
-    </Test>
     
   )
 }
 
 // Styles
 const Test = styled.div`
-  transform: scale(0.7);
+
 `
 const LogoContainer = styled.div `
     display: flex;
@@ -25,7 +25,7 @@ const LogoContainer = styled.div `
     min-width: 2rem;
 
     p {
-    font-size: ${theme.fonts.P6};    
+    font-size: ${theme.fonts.P5};    
     font-family: 'Amatic SC', cursive;
     font-weight: ${theme.fonts.weights.bold};
     color: ${theme.colors.primary};
@@ -34,23 +34,10 @@ const LogoContainer = styled.div `
     }
 
     img {
-      height:6rem;
+      max-height: 4rem;
       object-fit: contain;
       object-position: center;
       margin: 0 ${theme.spacing.sm};
-    }
-
-    .small {
-      background-color: red;
-      transform: scale(0.5);
-    }
-
-    .medium {
-      transform: scale(0.5);
-    }
-
-    .tall {
-      transform: scale(1);
     }
 `
 export default Logo
