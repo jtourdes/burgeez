@@ -5,9 +5,9 @@ const Logo = ({size, onClick})=> {
   return (
     <Test className={size} onClick={onClick}>
       <LogoContainer >
-        <p>Holyyyy</p>
+        {/* <p>Holyyyy</p> */}
         <img src="/images/F03 logo-orange.png" alt="" />
-        <p>Burgeez</p>
+        {/* <p>Burgeez</p> */}
     </LogoContainer>
     </Test>
     

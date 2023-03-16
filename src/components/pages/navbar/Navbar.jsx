@@ -17,7 +17,7 @@ const Navbar = ({username}) => {
 
     function disconnectUser () {
         navigate("/")
-      } 
+    } 
 
 
     // Render
@@ -44,9 +44,9 @@ const Navbar = ({username}) => {
 // Styles
 
 
-const NavbarStyled = styled.div`
+const NavbarStyled = styled.nav`
     display: grid;
-    grid-template-rows: repeat(6.25rem);
+    grid-template-rows: repeat(10vh);
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     background-color: white;
