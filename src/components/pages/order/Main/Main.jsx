@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import {theme} from "../../../theme/index"
+import {theme} from "../../../../theme/index"
+import Menu from './Menu'
 
 function Main() {
   return (
     <MainStyled>
-        <div className='basket'>panier de commande</div>
-        <div className='items'>items</div>
+        <Menu />
     </MainStyled>
   )
 }
