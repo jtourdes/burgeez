@@ -4,8 +4,8 @@ import { theme } from "../../theme"
 const Logo = ({className, onClick})=> {
   return (
     <LogoContainer
-    className={className}
-    onClick={onClick}>
+      className={className}
+      onClick={onClick}>
         <p>Holyyyy</p>
         <img src="/images/F03 logo-orange.png" alt="" />
         <p>Burgeez</p>
@@ -15,9 +15,6 @@ const Logo = ({className, onClick})=> {
 }
 
 // Styles
-const Test = styled.div`
-
-`
 const LogoContainer = styled.div `
     display: flex;
     align-items: center;

@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import Logo from "../Logo"
 
 
-function NavbarLefSide({refreshPage}) {
+function NavbarLefSide({onClick}) {
   return (
     <NavbarLeftSideStyled>
           <Logo 
                 size="small"
-                onClick={refreshPage}
+                onClick={onClick}
+                className="logo-order-page"
             />
     </NavbarLeftSideStyled>
   )
@@ -19,5 +20,9 @@ const NavbarLeftSideStyled = styled.div`
     grid-area: 1 / 1 / 2 / 2;
     justify-self: start;
     margin-left: 2rem;
+
+    .logo-order-page{
+      cursor: pointer;
+    }
 `
 export default NavbarLefSide

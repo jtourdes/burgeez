@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import {theme} from "../../../theme/index.js"
-import {useNavigate } from "react-router-dom"
-
 
 export default function Profile({username, Icon, linkLabel, linkAction}) {
     // State

@@ -4,16 +4,13 @@ import styled from 'styled-components'
 import NavbarLefSide from './NavbarLefSide'
 import NavbarRightSide from './NavbarRightSide'
 import {theme} from "../../../theme/index"
+import { refreshPage } from '../../../utils/windows'
 
-const Navbar = ({username, disconnectUser}) => {
+const Navbar = ({username}) => {
     // State
     const navigate = useNavigate();
 
     // Behavior
-    function refreshPage () {
-        window.location.reload()
-    }
-
     function disconnectUser () {
         navigate("/")
     } 
@@ -23,7 +20,7 @@ const Navbar = ({username, disconnectUser}) => {
   return (
     <NavbarStyled>
         <NavbarLefSide onClick={refreshPage}/>
-        <NavbarRightSide username={username}/>
+        <NavbarRightSide username={username} disconnectUser={disconnectUser} />
     </NavbarStyled>
   )
 }
