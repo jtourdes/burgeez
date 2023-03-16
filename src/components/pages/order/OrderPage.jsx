@@ -1,22 +1,32 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
+import styled from 'styled-components';
+import Main from './Main';
 
-const OrderPage = (props) => {
+const OrderPage = () => {
 
     //State
-    const navigate = useNavigate();
     const {username} = useParams() //retrieve the "name" field in url parameter object
 
-    //Comportement
+    //Behavior
 
     //Render
-        return (  
-            <div>
-                <h1>Bonjour {username}</h1>
-                <button onClick={()=>{navigate("/")}} >Déconnexion</button>
-            </div>
+        return (
+            <OrderPageStyled>
+                <Navbar username={username} className="front"/> 
+                <Main className="behind"/>
+            </OrderPageStyled> 
         );
     }
+
+// Styles
+
+const OrderPageStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+`
 
 export default OrderPage;

@@ -1,13 +1,16 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-const Logo = ()=> {
+const Logo = ({className, onClick})=> {
   return (
-    <LogoContainer>
+    <LogoContainer
+      className={className}
+      onClick={onClick}>
         <p>Holyyyy</p>
         <img src="/images/F03 logo-orange.png" alt="" />
         <p>Burgeez</p>
     </LogoContainer>
+    
   )
 }
 
@@ -17,10 +20,9 @@ const LogoContainer = styled.div `
     align-items: center;
     justify-content:center;
     min-width: 2rem;
-    transform: scale();
 
     p {
-    font-size: ${theme.fonts.P6};    
+    font-size: ${theme.fonts.P5};    
     font-family: 'Amatic SC', cursive;
     font-weight: ${theme.fonts.weights.bold};
     color: ${theme.colors.primary};
@@ -29,7 +31,7 @@ const LogoContainer = styled.div `
     }
 
     img {
-      height:6rem;
+      max-height: 4rem;
       object-fit: contain;
       object-position: center;
       margin: 0 ${theme.spacing.sm};
