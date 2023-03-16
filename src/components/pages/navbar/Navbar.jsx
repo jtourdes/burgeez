@@ -1,12 +1,10 @@
-import { MdAccountCircle } from 'react-icons/md'
+
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Logo from '../Logo'
-import Profile from './Profile'
+import NavbarLefSide from './NavbarLefSide'
+import NavbarRightSide from './NavbarRightSide'
 
-
-
-const Navbar = ({username}) => {
+const Navbar = ({username, disconnectUser}) => {
     // State
     const navigate = useNavigate();
 
@@ -23,20 +21,8 @@ const Navbar = ({username}) => {
     // Render
   return (
     <NavbarStyled>
-        <NavLeftSide>
-            <Logo 
-                size="small"
-                onClick={refreshPage}
-            />
-        </NavLeftSide>
-        <NavRightSide>
-            <Profile
-                username={username}
-                Icon={<MdAccountCircle className="icon"/>}
-                linkLabel={"Se déconnecter"}
-                linkAction={disconnectUser}
-            />
-        </NavRightSide>
+        <NavbarLefSide onClick={refreshPage}/>
+        <NavbarRightSide username={username}/>
     </NavbarStyled>
   )
 }
@@ -52,13 +38,7 @@ const NavbarStyled = styled.nav`
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `
-const NavLeftSide = styled.div`
-    grid-area: 1 / 1 / 2 / 2;
-    justify-self: start;
-`
 
-const NavRightSide = styled.div`
-    grid-area: 1 / 2 / 2 / 3;
-    justify-self: end;
-`
+
+
 export default Navbar;
