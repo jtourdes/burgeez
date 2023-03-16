@@ -23,7 +23,6 @@ export default function Profile({username, Icon, linkLabel, linkAction}) {
 
 // Styles
 const ProfileContainerStyled = styled.div`
-  /* background-color: blue; */
   display: flex;
   align-items: center;
   gap: 1.5rem;

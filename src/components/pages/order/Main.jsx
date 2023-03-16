@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {theme} from "../../../theme/index"
 
 function Main() {
   return (
@@ -12,11 +13,12 @@ function Main() {
 
 // Styles
 const MainStyled = styled.div `
-    background-color: aqua;
+    background-color: ${theme.colors.background_white} ;
     flex: 1;
     display: grid;
     grid-template-rows: () ;
     grid-template-columns: (1fr 3fr);
+    z-index: 0;
 
     .basket {
         grid-area: 1 / 1 / 2 / 2;

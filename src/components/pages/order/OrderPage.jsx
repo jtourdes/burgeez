@@ -14,8 +14,8 @@ const OrderPage = () => {
     //Render
         return (
             <OrderPageStyled>
-                <Navbar username={username}/> 
-                <Main />
+                <Navbar username={username} className="front"/> 
+                <Main className="behind"/>
             </OrderPageStyled> 
         );
     }
