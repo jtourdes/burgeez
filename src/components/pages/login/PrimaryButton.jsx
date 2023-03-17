@@ -20,12 +20,18 @@ const ButtonStyled = styled.button `
     height: 4rem;
     padding: 0 ${theme.spacing.sm};
     background-color: ${theme.colors.primary};
-    color: ${theme.colors.background_white};
+    color: ${theme.colors.white};
     font-size: ${theme.fonts.P0};
     font-weight: bold;
     border-radius: ${theme.borderRadius.round};
     border-style: none;
+    cursor: pointer;
 
+    :hover{
+      background-color: ${theme.colors.white};
+      border: 1px solid;
+      color: ${theme.colors.primary};
+    }
 .arrow-icon {
     margin: ${theme.spacing.xs};
 
