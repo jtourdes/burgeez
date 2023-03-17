@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 
 
-export default function PrimaryButton({label, Icon, ...otherProps}) {
+export default function PrimaryButton({label, Icon, className, ...otherProps}) {
   return (
-    <ButtonStyled type="submit">
+    <ButtonStyled className={className} type="submit">
         <span>{label}</span>
         {Icon && Icon}
     </ButtonStyled>
@@ -18,7 +18,6 @@ const ButtonStyled = styled.button `
     align-items: center;
     justify-content: center;
     height: 4rem;
-    min-width: 18rem;
     padding: 0 ${theme.spacing.sm};
     background-color: ${theme.colors.primary};
     color: ${theme.colors.background_white};
@@ -29,6 +28,7 @@ const ButtonStyled = styled.button `
 
 .arrow-icon {
     margin: ${theme.spacing.xs};
+
 }
 
 `
