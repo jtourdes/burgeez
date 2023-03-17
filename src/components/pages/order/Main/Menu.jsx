@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import FoodCard from './FoodCard'
 import { fakeMenu2 } from '../../../../fakeMenu'
 
 function Menu(props) {
   // State
-
+  const [menu, setMenu] = useState(fakeMenu2) 
   // Behavior
 
   // Render
@@ -13,9 +13,10 @@ function Menu(props) {
 
   return (
     <MenuStyled>
-      {fakeMenu2.map((item)=>
+      {menu.map((item)=>
         <FoodCard 
-          title={item.title} 
+          // {...item} works as well
+          title={item.title}  
           img={item.imageSource}
           price={item.price}
           />
@@ -24,7 +25,7 @@ function Menu(props) {
   )
   }
 
-const MenuStyled = styled.div`
+const MenuStyled = styled.div` 
   display: grid;
   grid-template-rows: repeat(4, minmax(21rem, 21rem));
   grid-template-columns: repeat(auto-fit, minmax(15rem, 2rem));

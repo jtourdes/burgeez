@@ -30,12 +30,13 @@ const Navbar = ({username}) => {
 
 const NavbarStyled = styled.nav`
     display: grid;
-    grid-template-rows: repeat(10vh);
+    grid-template-rows: 10vh;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     background-color: ${theme.colors.white};
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     z-index: 1;
+    position: sticky;
 `
 
 

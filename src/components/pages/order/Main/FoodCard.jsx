@@ -7,15 +7,17 @@ import { formatPrice } from "../../../../utils/maths"
 function FoodCard({img, title, price}) {
   return (
     <FoodCardStyled>
-        <div className="img-container">
-        <img src={img} alt="" />
-        </div>
-        
+        <ImgContainerStyled>
+            <img src={img} alt="" />
+        </ImgContainerStyled>
+        <FoodInfoStyled>
         <h2>{title}</h2>
-        <div className="bottom">
+        <div className="description">
             <p classNale="price">{formatPrice(price)}</p>
             <PrimaryButton label={"Ajouter"} className={"small-btn"}/>
         </div>
+        </FoodInfoStyled>
+        
         
     </FoodCardStyled>
   )
@@ -31,21 +33,22 @@ const FoodCardStyled = styled.div`
     background-color: ${theme.colors.white};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;          
+`
+const ImgContainerStyled = styled.div`
+    height: 145px;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
     
-    .img-container{
-        height: 145px;
-        max-width: 200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-    }
-
     img {
         max-height: 145px;
         max-width: 200px;
     }
+`
 
+const FoodInfoStyled = styled.div`
     h2 {
         font-family: "Amatic SC", cursive;
         font-size: ${theme.fonts.P4};
@@ -54,10 +57,13 @@ const FoodCardStyled = styled.div`
     }
 
     p {
+        color: ${theme.colors.primary};
+        font-size: ${theme.fonts.P1};
         font-family: "Open Sans", sans-serif;
+        /* font-weight: ${theme.fonts.weights.bold}; */
     }
 
-    .bottom {
+    .description {
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -71,7 +77,5 @@ const FoodCardStyled = styled.div`
     }
 
     }
-    
 `
-
 export default FoodCard
