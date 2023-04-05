@@ -6,7 +6,7 @@ import NavbarRightSide from './NavbarRightSide'
 import {theme} from "../../../theme/index"
 import { refreshPage } from '../../../utils/windows'
 
-const Navbar = ({username}) => {
+const Navbar = ({username, adminNotification}) => {
     // State
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Navbar = ({username}) => {
   return (
     <NavbarStyled>
         <NavbarLefSide onClick={refreshPage}/>
-        <NavbarRightSide username={username} disconnectUser={disconnectUser} />
+        <NavbarRightSide username={username} disconnectUser={disconnectUser} toastRef={""} adminNotification={adminNotification}/>
     </NavbarStyled>
   )
 }

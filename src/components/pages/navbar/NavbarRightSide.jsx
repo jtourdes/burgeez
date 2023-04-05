@@ -4,16 +4,18 @@ import { MdAccountCircle } from 'react-icons/md'
 import styled from 'styled-components'
 import ToggleButton from './ToggleButton'
 
-function NavbarRightSide({username, disconnectUser}) {
+function NavbarRightSide({username, disconnectUser, adminNotification}) {
+
   return (
     <NavbarRightSideStyled>
-        <ToggleButton/>
+        <ToggleButton onToggle={adminNotification}/>
         <Profile
                 username={username}
                 Icon={<MdAccountCircle className="icon"/>}
                 linkLabel={"Se déconnecter"}
                 linkAction={disconnectUser}
             />
+
     </NavbarRightSideStyled>
   )
 }

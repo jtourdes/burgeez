@@ -3,19 +3,23 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import styled from 'styled-components';
 import Main from './Main/Main';
+import { toast } from 'react-toastify';
 
-const OrderPage = () => {
+
+const OrderPage = ({}) => {
 
     //State
     const {username} = useParams() //retrieve the "name" field in url parameter object
 
     //Behavior
 
+
     //Render
         return (
             <OrderPageStyled>
-                <Navbar username={username} className="front"/> 
+                <Navbar username={username} toastRef={""} adminNotification={notify} className="front"/> 
                 <Main className="behind"/>
+
             </OrderPageStyled> 
         );
     }
