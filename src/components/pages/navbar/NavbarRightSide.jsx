@@ -2,12 +2,12 @@ import React from 'react'
 import Profile from "./Profile"
 import { MdAccountCircle } from 'react-icons/md'
 import styled from 'styled-components'
-import AdminButton from './AdminButton'
+import ToggleButton from './ToggleButton'
 
 function NavbarRightSide({username, disconnectUser}) {
   return (
     <NavbarRightSideStyled>
-        <AdminButton/>
+        <ToggleButton/>
         <Profile
                 username={username}
                 Icon={<MdAccountCircle className="icon"/>}
