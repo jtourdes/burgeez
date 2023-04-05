@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import styled from 'styled-components';
-import Main from './Main';
+import Main from './Main/Main';
 
 const OrderPage = () => {
 

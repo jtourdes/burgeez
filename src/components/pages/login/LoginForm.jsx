@@ -41,6 +41,7 @@ const LoginForm = () => {
                 <PrimaryButton 
                     label={"Accédez à mon espace"}
                     Icon={ <BsFillArrowRightCircleFill className="arrow-icon"/>}
+                    className={"regular-btn"}
                 />
             </div>
         </LoginFormStyled>
@@ -76,6 +77,10 @@ const LoginFormStyled = styled.form`
         width: 21rem;
         background-color: ${theme.colors.primary};
         margin: auto;
+    }
+
+    .regular-btn {
+        min-width: 18rem;
     }
 `
 
