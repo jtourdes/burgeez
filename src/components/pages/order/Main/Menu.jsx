@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import FoodCard from './FoodCard'
+import Card from '../../Card'
 import { fakeMenu2 } from '../../../../fakeMenu'
+import { formatPrice } from "../../../../utils/maths"
 
 function Menu(props) {
   // State
   const [menu, setMenu] = useState(fakeMenu2) 
+
   // Behavior
+
 
   // Render
 
@@ -14,11 +17,12 @@ function Menu(props) {
   return (
     <MenuStyled>
       {menu.map((item)=>
-        <FoodCard 
+        <Card 
           // {...item} works as well
           title={item.title}  
           img={item.imageSource}
-          price={item.price}
+          leftDescription={formatPrice(item.price)}
+          buttonLabel={"Ajouter"}
           />
       )}
     </MenuStyled>

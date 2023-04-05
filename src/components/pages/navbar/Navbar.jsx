@@ -15,7 +15,7 @@ const Navbar = ({username}) => {
         navigate("/")
     } 
 
-
+  
     // Render
   return (
     <NavbarStyled>

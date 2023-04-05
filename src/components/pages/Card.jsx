@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import {theme} from "../../../../theme/index"
-import PrimaryButton from "../../login/PrimaryButton"
-import { formatPrice } from "../../../../utils/maths"
+import {theme} from "../../theme/index"
+import PrimaryButton from "./login/PrimaryButton"
 
 
-function FoodCard({img, title, price}) {
+
+function Card({img, title, leftDescription, buttonLabel}) {
   return (
     <FoodCardStyled>
         <ImgContainerStyled>
@@ -13,8 +13,8 @@ function FoodCard({img, title, price}) {
         <FoodInfoStyled>
         <h2>{title}</h2>
         <div className="description">
-            <p classNale="price">{formatPrice(price)}</p>
-            <PrimaryButton label={"Ajouter"} className={"small-btn"}/>
+            <p>{leftDescription}</p>
+            <PrimaryButton label={buttonLabel} className={"small-btn"}/>
         </div>
         </FoodInfoStyled>
         
@@ -24,7 +24,6 @@ function FoodCard({img, title, price}) {
 }
 
 // Styles
-
 const FoodCardStyled = styled.div`
     height: 21rem ;
     width: 15rem;
@@ -78,4 +77,4 @@ const FoodInfoStyled = styled.div`
 
     }
 `
-export default FoodCard
+export default Card
