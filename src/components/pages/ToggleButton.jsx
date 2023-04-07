@@ -25,7 +25,6 @@ export default function ToggleButton({
         className="toggle"
         id="rounded"
         onChange={onToggle}
-        onClick={""}
       />
       <label
         htmlFor="rounded"

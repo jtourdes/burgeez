@@ -16,9 +16,10 @@ function Menu(props) {
 
   return (
     <MenuStyled>
-      {menu.map((item)=>
+      {menu.map((item, index)=>
         <Card 
           // {...item} works as well
+          key={index}
           title={item.title}  
           img={item.imageSource}
           leftDescription={formatPrice(item.price)}

@@ -1,18 +1,8 @@
 import styled from 'styled-components'
 import AdminPanelTabs from './AdminPanelTabs.jsx'
+import {MdAdd, MdArrowDropDown, MdEdit} from "react-icons/md"
 
 export default function AdminPanel() {
-    
-const tabs = {
-    1:{
-        icon:"MdAdd",
-        title:"Ajouter un produit"
-    },
-    2:{
-        icon:"MdEdit",
-        title:"Modifier un produit"
-    }
-}
 
 // State
 
@@ -25,7 +15,7 @@ const tabs = {
 
   return (
     <AdminPanelStyled>
-      <AdminPanelTabs/>
+      <AdminPanelTabs />
     </AdminPanelStyled>
 
   )

@@ -1,54 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../theme'
 
-export default function Tab({index, Icon, label, isSelected, isActive}) {
+export default function Tab({onClick, Icon, label, isSelected = false}) {
 //State
-
 
 //Behavior
 
-
 //Render
-  return (
-    <TabStyled>
-        <div className="icon">
-            {Icon && Icon}
-        </div> 
-        <div>{label}</div>  
-    </TabStyled>
-    
 
+
+  return (
+    <TabStyled onClick={onClick} isSelected={isSelected} >
+        <div>
+            <div className="icon">
+                {Icon && Icon}
+            </div> 
+            <div>{label}</div>  
+        </div>
+    </TabStyled>
   )
 }
 
 const TabStyled = styled.button`
-    background-color: red;
-    height: 100px;
+    //conditional styling
+    /* display: ${props => props.isHidden === true ? 'none' : 'flex'}; */
+    background-color: ${props => props.isSelected === true ? `${theme.colors.background_dark}` : `${theme.colors.white}`};
+    color: ${props => props.isSelected === true ? `${theme.colors.white}` : `${theme.colors.background_dark}`};
+
+
     height: 40px;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    cursor: pointer;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
-    background-color: ${theme.colors.white};
+    
+
+
+    //fonts
     font-family: ${theme.fonts.XS};
     font-weight: ${theme.fonts.weights.medium};
     color: ${theme.colors.greyDark};
     border: none;
     box-shadow: ${theme.shadows.small} ;
-    padding-left: 1rem;
-    padding-right: 1rem;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 100px;
-    color: black;
 
     .icon {
         margin: auto 0.3rem ;
     }
-
-    .true{
-    background-color: black;
-    color: white;
-  }
 `
