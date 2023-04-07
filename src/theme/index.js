@@ -58,9 +58,9 @@ const borderRadius = {
   circle: "50%",
 }
 const shadows = {
-  small: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
-  medium: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
-  large: "rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+  small: "rgba(0, 0, 0, 0.12) 0px 0px 3px, rgba(0, 0, 0, 0.24) 0px 0px 2px;",
+  medium: "rgba(0, 0, 0, 0.16) 0px 2px 20px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;",
+  large: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
 }
 
 export const theme = {

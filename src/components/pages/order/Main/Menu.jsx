@@ -31,7 +31,7 @@ function Menu(props) {
 
 const MenuStyled = styled.div` 
   display: grid;
-  grid-template-rows: repeat(4, minmax(21rem, 21rem));
+  grid-template-rows: repeat(3, minmax(21rem, 21rem));
   grid-template-columns: repeat(auto-fit, minmax(15rem, 2rem));
   gap: 2rem;
   align-items: center;

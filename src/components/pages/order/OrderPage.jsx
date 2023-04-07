@@ -4,6 +4,7 @@ import Navbar from '../navbar/Navbar';
 import styled from 'styled-components';
 import Main from './Main/Main';
 import { toast } from 'react-toastify';
+import AdminPanel from '../AdminPanel';
 
 
 const OrderPage = ({}) => {
@@ -17,9 +18,9 @@ const OrderPage = ({}) => {
     //Render
         return (
             <OrderPageStyled>
-                <Navbar username={username} toastRef={""} adminNotification={""} className="front"/> 
-                <Main className="behind"/>
-
+                <Navbar username={username} className="header"/> 
+                <Main className="main"/>
+                <AdminPanel className="footer"/>
             </OrderPageStyled> 
         );
     }
@@ -27,10 +28,29 @@ const OrderPage = ({}) => {
 // Styles
 
 const OrderPageStyled = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-rows: (100px, auto);
+    grid-template-areas: 
+    "hd"
+    "mn"
+    "ft";
     height: 100vh;
     width: 100vw;
+
+    .header {
+        grid-area: hd;
+        position: sticky;
+    }
+
+    .main {
+        grid-area: mn;
+    }
+
+    .footer {
+        grid-area: ft;
+    }
+
+    
 `
 
 export default OrderPage;
