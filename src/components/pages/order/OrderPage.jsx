@@ -17,7 +17,7 @@ const OrderPage = ({}) => {
     //Render
         return (
             <OrderPageStyled>
-                <Navbar username={username} toastRef={""} adminNotification={notify} className="front"/> 
+                <Navbar username={username} toastRef={""} adminNotification={""} className="front"/> 
                 <Main className="behind"/>
 
             </OrderPageStyled> 
