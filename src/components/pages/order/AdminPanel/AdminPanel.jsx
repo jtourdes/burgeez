@@ -25,7 +25,7 @@ const tabs = {
 
   return (
     <AdminPanelStyled>
-            <AdminPanelTab/>
+      <AdminPanelTab/>
     </AdminPanelStyled>
 
   )

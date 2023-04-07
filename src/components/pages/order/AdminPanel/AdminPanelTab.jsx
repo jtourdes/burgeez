@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { theme } from "../../theme/index"
+import { theme } from "../../../../theme/index"
 import {MdAdd, MdArrowDropDown, MdEdit} from "react-icons/md"
 
 

@@ -3,11 +3,10 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import styled from 'styled-components';
 import Main from './Main/Main';
-import { toast } from 'react-toastify';
-import AdminPanel from '../AdminPanel';
+import AdminPanel from './AdminPanel/AdminPanel';
 
 
-const OrderPage = ({}) => {
+const OrderPage = () => {
 
     //State
     const {username} = useParams() //retrieve the "name" field in url parameter object
