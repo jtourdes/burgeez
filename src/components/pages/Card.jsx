@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {theme} from "../../theme/index"
-import PrimaryButton from "./login/PrimaryButton"
+import PrimaryButton from "./PrimaryButton"
 
 
 
@@ -28,7 +28,7 @@ const FoodCardStyled = styled.div`
     height: 21rem ;
     width: 15rem;
     border-radius: ${theme.borderRadius.extraRound};
-    box-shadow: ${theme.shadows.small};
+    box-shadow: ${theme.shadows.medium};
     background-color: ${theme.colors.white};
     display: flex;
     flex-direction: column;

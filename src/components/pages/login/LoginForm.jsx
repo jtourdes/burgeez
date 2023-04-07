@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {BsFillArrowRightCircleFill} from "react-icons/bs"
 import { BsPersonCircle } from "react-icons/bs";
 import Input from './Input';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from '../PrimaryButton';
 import {theme} from "../../../theme"
 
 const LoginForm = () => {
