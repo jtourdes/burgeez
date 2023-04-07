@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AdminPanelTab from './AdminPanelTab.jsx'
+import AdminPanelTabs from './AdminPanelTabs.jsx'
 
 export default function AdminPanel() {
     
@@ -25,7 +25,7 @@ const tabs = {
 
   return (
     <AdminPanelStyled>
-      <AdminPanelTab/>
+      <AdminPanelTabs/>
     </AdminPanelStyled>
 
   )

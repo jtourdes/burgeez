@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { theme } from "../../../../theme/index"
 import {MdAdd, MdArrowDropDown, MdEdit} from "react-icons/md"
+import Tab from './Tab';
 
 
 export default function AdminPanelTab() {
@@ -39,16 +40,28 @@ export default function AdminPanelTab() {
          <button className="tab" onClick={()=>hidePanel(true)}>
             <MdArrowDropDown className="icon"/>
          </button>
+
+
          <div className={`flex hidden-${isHidden}`}>
+
+
             <button className={`tab ${checkSelected(1, "active-tab")}`} onClick={()=>handleClick(1)}>
                 <MdAdd className="icon"/>
                 <div>ajouter un produit</div>
             </button>
+
+
             <button className={`tab ${checkSelected(2, "active-tab")}`} onClick={()=>handleClick(2)}>
                 <MdEdit className="icon"/>
                 <div>modifier un produit</div>
             </button>
+
+            <Tab index={5} Icon={<MdArrowDropDown/>} label={"essai"}/>
+
+            
          </div>
+
+
       </div>
       <div className={`hidden-${isHidden}`}>
         <div className={`panel ${checkActive(1, "active-panel")}`}>panel 1</div>
@@ -66,35 +79,6 @@ const TabsStyled = styled.div`
 }
   .tabs {
     padding-left: 5rem;
-  }
-
-  .tab {
-    background-color: red;
-    height: 100px;
-    height: 40px;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-    background-color: ${theme.colors.white};
-    font-family: ${theme.fonts.XS};
-    font-weight: ${theme.fonts.weights.medium};
-    color: ${theme.colors.greyDark};
-    border: none;
-    box-shadow: ${theme.shadows.small} ;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .icon {
-    margin: auto 0.3rem ;
-  }
-
-  .active-tab{
-    background-color: black;
-    color: white;
   }
   
   .panel{
