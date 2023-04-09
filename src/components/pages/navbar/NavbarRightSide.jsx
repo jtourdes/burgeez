@@ -3,13 +3,15 @@ import Profile from "./Profile"
 import { MdAccountCircle } from 'react-icons/md'
 import styled from 'styled-components'
 import ToggleButton from '../ToggleButton'
-import {useState} from "react"
 import { toast } from "react-toastify";
+import { Context } from '../Context'
+import { useContext } from 'react'
+
 
 function NavbarRightSide({username, disconnectUser, adminNotification}) {
 
 //State
-const [isAdminMode, setAdminMode] = useState(false)
+const [isAdminMode, setAdminMode] = useContext(Context)
 
 //Behavior
 function onToggle (){
@@ -25,20 +27,19 @@ function onToggle (){
 
 //Render
   return (
-    <NavbarRightSideStyled>
-        <ToggleButton 
-          onToggle={onToggle}
-          labelIfChecked={"Mode Admin activé"}
-          labelIfUnchecked={"Mode Admin désactivé"}
-        />
-        <Profile
-                username={username}
-                Icon={<MdAccountCircle className="icon"/>}
-                linkLabel={"Se déconnecter"}
-                linkAction={disconnectUser}
-            />
-
-    </NavbarRightSideStyled>
+      <NavbarRightSideStyled>
+          <ToggleButton 
+            onToggle={onToggle}
+            labelIfChecked={"Mode Admin activé"}
+            labelIfUnchecked={"Mode Admin désactivé"}
+          />
+          <Profile
+                  username={username}
+                  Icon={<MdAccountCircle className="icon"/>}
+                  linkLabel={"Se déconnecter"}
+                  linkAction={disconnectUser}
+              />
+      </NavbarRightSideStyled>
   )
 }
 
