@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../theme'
 
-export default function Tab({onClick, Icon, label, isSelected = false}) {
+export default function Tab({onClick, Icon, label, isSelected = false, isHidden = false}) {
 //State
 
 //Behavior
@@ -11,20 +11,18 @@ export default function Tab({onClick, Icon, label, isSelected = false}) {
 
 
   return (
-    <TabStyled onClick={onClick} isSelected={isSelected} >
-        <div>
+    <TabStyled onClick={onClick} isSelected={isSelected} isHidden={isHidden}>
             <div className="icon">
                 {Icon && Icon}
             </div> 
-            <div>{label}</div>  
-        </div>
+            <div>{label}</div>
     </TabStyled>
   )
 }
 
 const TabStyled = styled.button`
     //conditional styling
-    /* display: ${props => props.isHidden === true ? 'none' : 'flex'}; */
+    display: ${props => props.isHidden === true ? 'none' : 'flex'}; 
     background-color: ${props => props.isSelected === true ? `${theme.colors.background_dark}` : `${theme.colors.white}`};
     color: ${props => props.isSelected === true ? `${theme.colors.white}` : `${theme.colors.background_dark}`};
 

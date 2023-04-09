@@ -45,16 +45,13 @@ export default function AdminPanelTab() {
         <div className="flex">
           {tabs.map((tab, index)=>{
             return (
-            
               <Tab
-                
                 key={index}
                 onClick={()=>handleClick(index)}
                 Icon={tab.Icon} 
                 label={tab.title}
                 isSelected={activeIndex === index ? true : false}
               />
-         
             )
           })}
         </div>   
