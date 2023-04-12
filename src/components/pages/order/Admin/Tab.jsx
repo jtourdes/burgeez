@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../theme'
 
-export default function Tab({onClick, Icon, label, isSelected = false, isHidden = false}) {
+export default function Tab({onClick, Icon, label, isSelected = false}) {
 //State
 
 //Behavior
@@ -11,22 +11,21 @@ export default function Tab({onClick, Icon, label, isSelected = false, isHidden 
 
 
   return (
-    <TabStyled onClick={onClick} isSelected={isSelected} isHidden={isHidden}>
+    <TabStyled onClick={onClick} isSelected={isSelected}>
             <div className="icon">
                 {Icon && Icon}
+            {label}
             </div> 
-            <div>{label}</div>
     </TabStyled>
   )
 }
 
 const TabStyled = styled.button`
     //conditional styling
-    display: ${props => props.isHidden === true ? 'none' : 'flex'}; 
-    background-color: ${props => props.isSelected === true ? `${theme.colors.background_dark}` : `${theme.colors.white}`};
-    color: ${props => props.isSelected === true ? `${theme.colors.white}` : `${theme.colors.background_dark}`};
+    background-color: ${props => props.isSelected ? `${theme.colors.background_dark}` : `${theme.colors.white}`};
+    color: ${props => props.isSelected ? `${theme.colors.white}` : `${theme.colors.background_dark}`};
 
-
+    display: flex;
     height: 40px;
     align-items: center;
     padding-right: 1rem;
@@ -46,6 +45,8 @@ const TabStyled = styled.button`
     z-index: 2;
 
     .icon {
-        margin: auto 0.3rem ;
+        display:flex;
+        align-items: center;
+        justify-content: center; 
     }
 `

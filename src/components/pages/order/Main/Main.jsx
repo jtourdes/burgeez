@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import {theme} from "../../../../theme/index"
 import Basket from './Basket'
 import Menu from './Menu'
-import AdminPanel from '../AdminPanel/AdminPanel'
+import AdminPanel from '../Admin/Admin'
 
 function Main() {
   return (
     <MainStyled>
-       <Basket />
-        <Menu />
+      <Basket />
+      <Menu />
     </MainStyled>
   )
 }
@@ -22,8 +22,7 @@ const MainStyled = styled.div `
     grid-template-columns: 30% 1fr;
     align-items: center;
     justify-content: center;
-    overflow: auto;
-
+    overflow: auto; 
 `
 
 export default Main
