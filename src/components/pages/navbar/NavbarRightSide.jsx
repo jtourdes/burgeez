@@ -4,14 +4,14 @@ import { MdAccountCircle } from 'react-icons/md'
 import styled from 'styled-components'
 import ToggleButton from '../ToggleButton'
 import { toast } from "react-toastify";
-import { Context } from '../Context'
 import { useContext } from 'react'
+import OrderPageContext from '../../../context/OrderPageContext'
 
 
 function NavbarRightSide({username, disconnectUser, adminNotification}) {
 
 //State
-const [isAdminMode, setAdminMode] = useContext(Context)
+const {isAdminMode, setAdminMode} = useContext(OrderPageContext)
 
 //Behavior
 function onToggle (){
