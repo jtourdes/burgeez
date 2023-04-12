@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import {theme} from "../../theme/index"
 import PrimaryButton from "./PrimaryButton"
+import {TiDelete} from "react-icons/ti"
 
 
 
 function Card({img, title, leftDescription, buttonLabel}) {
   return (
     <FoodCardStyled>
+        <TiDelete className="delete-icon"/>
         <ImgContainerStyled>
             <img src={img} alt="" />
         </ImgContainerStyled>
@@ -17,8 +19,6 @@ function Card({img, title, leftDescription, buttonLabel}) {
             <PrimaryButton label={buttonLabel} className={"small-btn"}/>
         </div>
         </FoodInfoStyled>
-        
-        
     </FoodCardStyled>
   )
 }
@@ -32,7 +32,13 @@ const FoodCardStyled = styled.div`
     background-color: ${theme.colors.white};
     display: flex;
     flex-direction: column;
-    justify-content: center;          
+    justify-content: space-evenly;     
+    
+    .delete-icon {
+        transform: scale(1.5);
+        align-self: flex-end;
+        margin: 1rem;
+    }
 `
 const ImgContainerStyled = styled.div`
     height: 145px;
@@ -42,8 +48,8 @@ const ImgContainerStyled = styled.div`
     align-items: center;
     
     img {
-        max-height: 145px;
-        max-width: 200px;
+        max-height: 140px;
+        max-width: 180px;
     }
 `
 
@@ -51,15 +57,14 @@ const FoodInfoStyled = styled.div`
     h2 {
         font-family: "Amatic SC", cursive;
         font-size: ${theme.fonts.P4};
-        margin-left: 1rem;
-        align-self: flex-start;
+        margin: 0rem 1rem 0rem 1rem
+        
     }
 
     p {
         color: ${theme.colors.primary};
         font-size: ${theme.fonts.P1};
         font-family: "Open Sans", sans-serif;
-        /* font-weight: ${theme.fonts.weights.bold}; */
     }
 
     .description {
@@ -73,8 +78,7 @@ const FoodInfoStyled = styled.div`
         .small-btn{
         height: 2.5rem;
         width: 6rem ;
-    }
-
+        }   
     }
 `
 export default Card
