@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../theme'
 import {MdOutlineAddAPhoto, MdEuro} from "react-icons/md"
 import {FaHamburger} from "react-icons/fa"
+import AddProductContext from '../../../../context/AddProductContext'
+import OrderPageContext from '../../../../context/OrderPageContext'
+import MenuContext from '../../../../context/MenuContext'
 
 export default function Panels({content, isSelected}) {
   // State
-
+  const {newProduct, setNewProduct} = useContext(AddProductContext)
+  const {menu, setMenu} = useContext(MenuContext)
 
   // Behavior
+  const handleChange = (event) => {
+    setNewProduct((prevValue)=>({
+      ...prevValue,
+      [event.target.name]: event.target.value
+    }));
+    console.log(newProduct)
+  }
+
+
+  const updateMenu = (event) => {
+    event.preventDefault()
+    setMenu(prevValue => [...prevValue,newProduct])
+    console.log(menu)
+  }
 
 
   // Render
@@ -23,23 +41,24 @@ export default function Panels({content, isSelected}) {
       <form>
         <div className="form-input">
           <FaHamburger className="icon"/>
-          <input type="text" placeholder="Nom du produit à ajouter" id="product-name"/>
+          <input onChange={handleChange} name="title" type="text" placeholder="Nom du produit à ajouter" id="product-name"/>
         </div>
         <div className="form-input">
         <MdOutlineAddAPhoto className="icon"/>
-          <input type="url" placeholder="Lien URL de l'image" id="product-img"/>
+          <input onChange={handleChange} name="product-photo" type="url" placeholder="Lien URL de l'image" id="product-img"/>
         </div>
         <div className="form-input">
         <MdEuro className="icon"/>
-          <input type="number" placeholder="Prix" id="product-price"/>
+          <input onChange={handleChange} name="price" type="number" placeholder="Prix" id="product-price"/>
         </div>
         <div>
-          <button className="form-button" type="submit">Ajouter le produit</button>
+          <button onClick={updateMenu} className="form-button" type="submit">Ajouter le produit</button>
         </div>
       </form>
     </StyledPanel>
   )
-}
+  }
+
 
 const StyledPanel = styled.div`
   display : ${props => props.isSelected === true ? 'flex' : 'none'};
