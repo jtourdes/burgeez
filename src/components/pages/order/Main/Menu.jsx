@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import Card from '../../Card'
 import { fakeMenu2 } from '../../../../fakeMenu'
 import { formatPrice } from "../../../../utils/maths"
+import AddProductContext from '../../../../context/AddProductContext'
+import MenuContext from '../../../../context/MenuContext'
 
 function Menu(props) {
   // State
-  const [menu, setMenu] = useState(fakeMenu2) 
+  const {menu} = useContext(MenuContext)
 
   // Behavior
 

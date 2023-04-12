@@ -3,14 +3,19 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import styled from 'styled-components';
 import Main from './Main/Main';
-import AdminPanel from './Admin/Admin';
+import Admin from './Admin/Admin';
 import OrderPageContext from '../../../context/OrderPageContext';
+import AddProductContext from '../../../context/AddProductContext';
+import MenuContext from '../../../context/MenuContext';
+import { fakeMenu2 } from '../../../fakeMenu';
 
 const OrderPage = () => {
 
     //State
     const {username} = useParams() //retrieve the "name" field in url parameter object
     const [isAdminMode, setAdminMode] = useState(false);
+    const [newProduct, setNewProduct] = useState("");
+    const [menu, setMenu] = useState(fakeMenu2)
  
 
     //Behavior
@@ -19,14 +24,29 @@ const OrderPage = () => {
         setAdminMode
     }
 
+    const AddProductContextValue = {
+        newProduct,
+        setNewProduct
+    }
+
+    const menuContextValue = {
+        menu,
+        setMenu
+    }
+
     //Render
         return (
+            
             <OrderPageContext.Provider value={OrderPageContextValue}>
-                <OrderPageStyled>
-                    <Navbar username={username} className="header"/> 
-                    <Main className="main"/>
-                    {isAdminMode && <AdminPanel className="footer display"/>}
-                </OrderPageStyled> 
+                <AddProductContext.Provider value={AddProductContextValue}>              
+                    <MenuContext.Provider value={menuContextValue}>
+                        <OrderPageStyled>
+                            <Navbar username={username} className="header"/> 
+                            <Main className="main"/>
+                            {isAdminMode && <Admin className="footer display"/>}
+                        </OrderPageStyled> 
+                    </MenuContext.Provider>
+                </AddProductContext.Provider>
             </OrderPageContext.Provider>
         );
     }

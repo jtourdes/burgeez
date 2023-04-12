@@ -5,7 +5,7 @@ import Tab from './Tab';
 import Panel from './Panel';
 
 
-export default function AdminPanelTab() {
+export default function Admin() {
   const tabs = [
     {
       Icon : <MdAdd/>,
