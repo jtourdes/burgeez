@@ -1,33 +1,45 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import Card from '../../Card'
-import { fakeMenu2 } from '../../../../fakeMenu'
 import { formatPrice } from "../../../../utils/maths"
-import AddProductContext from '../../../../context/AddProductContext'
 import MenuContext from '../../../../context/MenuContext'
+import OrderPageContext from '../../../../context/OrderPageContext'
 
 function Menu(props) {
+
+
   // State
-  const {menu} = useContext(MenuContext)
+  const {menu, setMenu} = useContext(MenuContext)
+  const {isAdminMode} = useContext(OrderPageContext)
+
 
   // Behavior
-
+  const deleteProduct = (id) => {
+    setMenu((preValue)=>{
+      return preValue.filter((product, index)=>{
+        return index !== id
+      })
+    })
+  }
 
   // Render
-
-
   return (
     <MenuStyled>
       {menu.map((item, index)=>
         <Card 
           // {...item} works as well
           key={index}
+          id={index}
           title={item.title}  
           img={item.imageSource}
           leftDescription={formatPrice(item.price)}
           buttonLabel={"Ajouter"}
+          isAdminMode={isAdminMode}
+          deleted={deleteProduct}
           />
-      )}
+        
+      )
+      }
     </MenuStyled>
   )
   }

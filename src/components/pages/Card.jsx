@@ -5,10 +5,10 @@ import {TiDelete} from "react-icons/ti"
 
 
 
-function Card({img, title, leftDescription, buttonLabel}) {
+function Card({id, img, title, leftDescription, buttonLabel, isAdminMode, deleted}) {
   return (
     <FoodCardStyled>
-        <TiDelete className="delete-icon"/>
+        {isAdminMode && <TiDelete onClick={()=>deleted(id)} className="delete-icon"/>}
         <ImgContainerStyled>
             <img src={img} alt="" />
         </ImgContainerStyled>
