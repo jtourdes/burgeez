@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import {theme} from "../../../../theme/index"
 import Basket from './Basket'
 import Menu from './Menu'
-import AdminPanel from '../Admin/Admin'
 
 function Main() {
   return (
