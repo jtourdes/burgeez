@@ -1,18 +1,18 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../../../theme'
-import {MdOutlineAddAPhoto, MdEuro} from "react-icons/md"
-import {FaHamburger} from "react-icons/fa"
-import AddProductContext from '../../../../context/AddProductContext'
-import OrderPageContext from '../../../../context/OrderPageContext'
-import MenuContext from '../../../../context/MenuContext'
+import { theme } from '../../../../../theme'
+import AddProductContext from '../../../../../context/AddProductContext'
+import MenuContext from '../../../../../context/MenuContext'
+import ImagePreview from '../ImagePreview'
+import TextInput from '../TextInput'
+import { textInputsConfig } from '../textInputsConfig'
 
-export default function Panels({content, isSelected}) {
+export default function AddProductPanel({content, isSelected}) {
   // State
   const {newProduct, setNewProduct} = useContext(AddProductContext)
   const {menu, setMenu} = useContext(MenuContext)
 
-  const [formProductImg, setFormProductImg] = useState("")
+  const [imagePreview, setImagePreview] = useState("")
 
   // Behavior
   const handleChange = (event) => {
@@ -24,10 +24,9 @@ export default function Panels({content, isSelected}) {
   }
 
   const updateFormProductPhoto = (event) => {
-    setFormProductImg(event.target.value)
-    console.log(formProductImg)
+    setImagePreview(event.target.value)
+    console.log(imagePreview)
   }
-
 
   const updateMenu = (event) => {
     event.preventDefault()
@@ -39,24 +38,11 @@ export default function Panels({content, isSelected}) {
   // Render
   return (
     <StyledPanel isSelected={isSelected}>
-      <div className="product-img">
-        {formProductImg === "" ? "Aucune image" :
-        <img className="product-img" src={formProductImg} alt="" />
-        }
-      </div>
+      <ImagePreview imgSource={imagePreview}/>
       <form>
-        <div className="form-input">
-          <FaHamburger className="icon"/>
-          <input onChange={handleChange} name="title" type="text" placeholder="Nom du produit à ajouter" id="product-name"/>
-        </div>
-        <div className="form-input">
-        <MdOutlineAddAPhoto className="icon"/>
-          <input onChange={(event)=>{handleChange(event); updateFormProductPhoto(event)}} name="imageSource" type="url" placeholder="Lien URL de l'image" id="product-img"/>
-        </div>
-        <div className="form-input">
-        <MdEuro className="icon"/>
-          <input onChange={handleChange} name="price" type="number" placeholder="Prix" id="product-price"/>
-        </div>
+        {textInputsConfig.map((input)=>{
+          return <TextInput key={input.id} onChange={input.id !== 1 ? handleChange : (event)=> {handleChange(event); updateFormProductPhoto(event)}} {...input}/> 
+        })}
         <div>
           <button onClick={updateMenu} className="form-button" type="submit">Ajouter le produit</button>
         </div>
@@ -120,19 +106,5 @@ const StyledPanel = styled.div`
       cursor: pointer;
     }
 
-  .product-img {
-    height: 120px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: none;
-    color: ${theme.colors.greyMedium};
-
-    //border
-    border-radius: 5px;
-    border: 1px dashed;
-    border-color: ${theme.colors.greyLight};
-    
-  }
+  
 `
