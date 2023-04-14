@@ -39,7 +39,7 @@ const TabStyled = styled.button`
     //fonts
     font-family: ${theme.fonts.XS};
     font-weight: ${theme.fonts.weights.medium};
-    color: ${theme.colors.greyDark};
+    color: $${props => props.isSelected ? `${theme.colors.white}` : `${theme.colors.greyDark}`};
     border: none;
     box-shadow: ${theme.shadows.small} ;
     z-index: 2;

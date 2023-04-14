@@ -12,6 +12,8 @@ export default function Panels({content, isSelected}) {
   const {newProduct, setNewProduct} = useContext(AddProductContext)
   const {menu, setMenu} = useContext(MenuContext)
 
+  const [formProductImg, setFormProductImg] = useState("")
+
   // Behavior
   const handleChange = (event) => {
     setNewProduct((prevValue)=>({
@@ -19,6 +21,11 @@ export default function Panels({content, isSelected}) {
       [event.target.name]: event.target.value
     }));
     console.log(newProduct)
+  }
+
+  const updateFormProductPhoto = (event) => {
+    setFormProductImg(event.target.value)
+    console.log(formProductImg)
   }
 
 
@@ -30,13 +37,12 @@ export default function Panels({content, isSelected}) {
 
 
   // Render
-
-
   return (
     <StyledPanel isSelected={isSelected}>
       <div className="product-img">
-        Aucune image
-      {/* <img className="product-img" src="" alt="" /> */}
+        {formProductImg === "" ? "Aucune image" :
+        <img className="product-img" src={formProductImg} alt="" />
+        }
       </div>
       <form>
         <div className="form-input">
@@ -45,7 +51,7 @@ export default function Panels({content, isSelected}) {
         </div>
         <div className="form-input">
         <MdOutlineAddAPhoto className="icon"/>
-          <input onChange={handleChange} name="product-photo" type="url" placeholder="Lien URL de l'image" id="product-img"/>
+          <input onChange={(event)=>{handleChange(event); updateFormProductPhoto(event)}} name="imageSource" type="url" placeholder="Lien URL de l'image" id="product-img"/>
         </div>
         <div className="form-input">
         <MdEuro className="icon"/>
