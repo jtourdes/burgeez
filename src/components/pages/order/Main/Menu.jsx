@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import Card from '../../Card'
+import Card from '../../reusable/Card'
 import { formatPrice } from "../../../../utils/maths"
 import MenuContext from '../../../../context/MenuContext'
 import OrderPageContext from '../../../../context/OrderPageContext'

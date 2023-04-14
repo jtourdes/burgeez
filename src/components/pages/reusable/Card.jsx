@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {theme} from "../../theme/index"
+import {theme} from "../../../theme/index"
 import PrimaryButton from "./PrimaryButton"
 import {TiDelete} from "react-icons/ti"
 

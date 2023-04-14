@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {MdAdd, MdArrowDropDown, MdEdit} from "react-icons/md"
 import Tab from './Tab';
-import Panel from './Panel';
+import AddProductPanel from './AdminPanel/AddProductPanel';
 
 
 export default function Admin() {

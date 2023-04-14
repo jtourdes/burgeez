@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from './LoginForm';
 import styled from 'styled-components';
-import Logo from "../Logo"
+import Logo from "../reusable/Logo"
 
 const LoginPage = () => {
     return (  

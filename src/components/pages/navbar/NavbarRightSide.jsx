@@ -2,7 +2,7 @@ import React from 'react'
 import Profile from "./Profile"
 import { MdAccountCircle } from 'react-icons/md'
 import styled from 'styled-components'
-import ToggleButton from '../ToggleButton'
+import ToggleButton from '../reusable/ToggleButton'
 import { toast } from "react-toastify";
 import { useContext } from 'react'
 import OrderPageContext from '../../../context/OrderPageContext'
