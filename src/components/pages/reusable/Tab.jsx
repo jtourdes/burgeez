@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../../../theme'
+import { theme } from '../../../theme'
 
 export default function Tab({onClick, Icon, label, isSelected = false}) {
 //State
@@ -34,12 +33,10 @@ const TabStyled = styled.button`
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
     
-
-
     //fonts
     font-family: ${theme.fonts.XS};
     font-weight: ${theme.fonts.weights.medium};
-    color: $${props => props.isSelected ? `${theme.colors.white}` : `${theme.colors.greyDark}`};
+    color: ${props => props.isSelected ? `${theme.colors.white}` : `${theme.colors.greyDark}`};
     border: none;
     box-shadow: ${theme.shadows.small} ;
     z-index: 2;

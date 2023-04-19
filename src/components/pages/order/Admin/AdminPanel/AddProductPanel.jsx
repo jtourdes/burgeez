@@ -53,15 +53,11 @@ export default function AddProductPanel({content, isSelected}) {
 
 
 const StyledPanel = styled.div`
-  display : ${props => props.isSelected === true ? 'flex' : 'none'};
+  display: flex;
   align-items: center;
-  box-shadow: ${theme.shadows.large};
-  height: 15rem;
   z-index: 3;
   background-color: ${theme.colors.white};
   align-items: start;
-  padding-top: 2rem;
-  padding-left: 5rem;
 
   form {
     margin-left: 1rem;
@@ -70,7 +66,6 @@ const StyledPanel = styled.div`
 
   .form-input {
     height: 35px;
-    width: 600px;
     display: flex;
     align-items: center;
     background-color: ${theme.colors.background_white};
