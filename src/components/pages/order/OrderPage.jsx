@@ -14,6 +14,8 @@ const OrderPage = () => {
     //State
     const {username} = useParams() //retrieve the "name" field in url parameter object
     const [isAdminMode, setAdminMode] = useState(false);
+    const [isTabSelected, setIsTabSelected] = useState(false)
+    const [activeTabIndex, setActiveTabIndex] = useState(0)
     const [newProduct, setNewProduct] = useState("");
     const [menu, setMenu] = useState(fakeMenu2)
  
@@ -21,7 +23,13 @@ const OrderPage = () => {
     //Behavior
     const OrderPageContextValue = {
         isAdminMode,
-        setAdminMode
+        setAdminMode,
+
+        isTabSelected,
+        setIsTabSelected,
+
+        activeTabIndex,
+        setActiveTabIndex 
     }
 
     const AddProductContextValue = {
