@@ -11,21 +11,12 @@ export default function AdminTabs() {
 
   //Behavior
   const selectTab = (index) => {
-    console.log("old" + activeTabIndex)
     setActiveTabIndex(index)
-    console.log("new" + activeTabIndex)
-
   }
-
-  const log = (index)=>{
-    console.log("down" + activeTabIndex)
-    
-  }
-
   //Render
   return (
     <AdminTabsStyled >
-        <Tab Icon={<MdArrowDropDown />} onClick={log}/>
+        <Tab Icon={<MdArrowDropDown />} />
         {tabsConfigs.map((tab, index)=>{
           return (
             <Tab
